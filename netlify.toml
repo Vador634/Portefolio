@@ -1,0 +1,40 @@
+# Configuration Netlify — le site est 100 % statique : aucune étape de build.
+[build]
+  publish = "site"
+  command = ""
+
+# Anciennes URLs (avant la réorganisation des dossiers) → nouvelles URLs.
+# Les liens de CV déjà envoyés aux recruteurs continuent de fonctionner.
+[[redirects]]
+  from = "/assets/cv_kilian_carasco_stage.pdf"
+  to = "/assets/cv/cv_kilian_carasco_stage.pdf"
+  status = 301
+[[redirects]]
+  from = "/assets/cv_kilian_carasco_alternance.pdf"
+  to = "/assets/cv/cv_kilian_carasco_alternance.pdf"
+  status = 301
+[[redirects]]
+  from = "/assets/cv_kilian_carasco.pdf"
+  to = "/assets/cv/cv_kilian_carasco_stage.pdf"
+  status = 301
+[[redirects]]
+  from = "/images/kilian3.png"
+  to = "/images/photo/kilian3.png"
+  status = 301
+
+# En-têtes de sécurité appliqués à toutes les pages.
+# La CSP n'autorise que le domaine du site, l'API GitHub (liste des projets)
+# et jsDelivr (interpréteur Python Pyodide pour le Démineur).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; connect-src 'self' https://api.github.com https://cdn.jsdelivr.net; img-src 'self' data:; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+[[headers]]
+  for = "/assets/cv/*.pdf"
+  [headers.values]
+    X-Robots-Tag = "noindex"

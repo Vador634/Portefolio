@@ -1,0 +1,22 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Netlify CLI (contient l'identifiant du site lié)
+.netlify/
+
+# Environnement / secrets — ne jamais versionner
+.env
+.env.*
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
