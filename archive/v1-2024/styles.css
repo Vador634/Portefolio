@@ -1,0 +1,192 @@
+/* Style général pour le body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body occupe toute la hauteur de la vue */
+    background-image: url('fondecran.jpg');
+    background-size: cover; /* Recouvre tout le champ */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+}
+
+/* Style pour les menus déroulants */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style des boutons */
+.menu-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+fieldset {
+  border: 2px solid #333;
+  padding: 20px;
+  margin: 20px auto;
+  width: 50%;
+  background-image: url('rgb.jpg');
+  background-size: cover; /* Recouvre tout le champ */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Évite la répétition de l'image */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white; /* Assure que le texte est lisible sur une image */
+  text-align: center;
+}
+
+
+/* Style pour l'en-tête (h1) */
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Style pour les boutons */
+input[type="button"] {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    border: 2px solid #5f00fc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Changement de couleur au survol des boutons */
+input[type="button"]:hover {
+    background-color: #5f00fc;
+    color: #fff;
+}
+
+/* Conteneur principal pour l'alignement et le centrage */
+.info-container {
+    display: flex; /* Utilisation du modèle Flexbox pour l'alignement */
+    align-items: center; /* Alignement vertical des éléments au centre */
+    gap: 10px; /* Réduit l'espacement entre les éléments */
+    padding: 20px; /* Espacement intérieur du conteneur */
+    background-color: #f9f9f9; /* Couleur de fond du conteneur */
+    border-radius: 8px; /* Coins arrondis du conteneur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+    max-width: 90%; /* Limite la largeur du conteneur pour ne pas dépasser la largeur de la page */
+    margin: 100px auto 0; /* Centre le conteneur horizontalement et ajoute un espace en haut */
+    width: auto; /* Permet au conteneur de s'ajuster automatiquement en fonction du contenu */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+/* Style pour l'image de profil */
+.profile-pic {
+    width: 120px; /* Largeur de l'image de profil */
+    height: 120px; /* Hauteur de l'image de profil */
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+}
+
+/* Style pour le QR code */
+.Qr-code {
+    width: 100px; /* Largeur du QR code */
+    height: 100px; /* Hauteur du QR code */
+    object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+    margin-left: auto; /* Pousse le QR code vers la droite */
+}
+
+/* Style pour le texte d'information */
+.info-text {
+    max-width: 500px; /* Limite la largeur du texte pour une meilleure lisibilité */
+    margin-left: 10px; /* Réduit l'espacement entre l'image de profil et le texte */
+}
+
+/* Style pour les paragraphes */
+.info-text p {
+    margin: 0; /* Enlève les marges par défaut des paragraphes */
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour les titres forts */
+.info-text strong {
+    color: #000; /* Couleur des titres */
+}
+
+
+/* Style pour le copyright */
+p.copyright {
+    font-size: 0.9rem;
+    color: #000; /* Change la couleur du texte en noir */
+    text-align: center;
+    padding: 10px; /* Réduit l'espace autour du texte */
+    background-color: transparent; /* Rend le fond transparent */
+    position: fixed; /* Fixe l'élément par rapport à la fenêtre */
+    bottom: 15px; /* Place l'élément à 15px du bas de la page */
+    left: 0; /* Aligne l'élément à gauche */
+    width: 100%; /* Occupe toute la largeur de la page */
+    z-index: 10; /* Assure que l'élément est au-dessus des autres contenus */
+}
+
+
+/* Responsive styles (pour petits écrans) */
+@media (max-width: 768px) {
+    fieldset {
+        width: 80%;
+    }
+
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .profile-pic {
+        margin-bottom: 20px;
+    }
+
+    .info-t.fieldset-image {
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du fieldset */
+  height: auto;    /* Maintient le ratio d'aspect de l'image */
+  display: block;  /* Enlève l'espace blanc sous l'image */
+  margin: 0 auto;  /* Centre l'image horizontalement */
+}
+ext {
+        text-align: center;
+    }
+
+}
+}
+
+
+
+
+
